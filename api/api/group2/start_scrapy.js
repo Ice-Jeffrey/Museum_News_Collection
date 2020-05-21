@@ -24,8 +24,7 @@ router.get("/", function (req, res, next) {
 //运行helloworld脚本
 //处理业务代码
 router.get("/", function (req, res, next) {
-    exec(`cd F:\\Codes\\PySpider\\tutorial`)
-    exec(`curl http://192.144.239.176:6800/schedule.json -d project=tutorial -d spider=spider`, (err, stdout, stderr) => {
+    exec(`python ${path.join(__dirname, "..", "..", "pyscript", "helloworld.py")}`, (err, stdout, stderr) => {
         if (err) {
             return res.send(err);
         }
